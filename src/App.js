@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-
 import Product from './components/Product'
 import { products } from './constants/Products'
 
