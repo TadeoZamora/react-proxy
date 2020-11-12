@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import CreateProduct from './pages/CreateProduct'
 import Counter from './pages/Counter';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <App /> */}
-    <CreateProduct /> 
-    {/* <Counter /> */}
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={ App } />
+      <Route path="/counter" component={Counter} />
+      <Route path="/create" component={CreateProduct} />
+    </Switch>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
