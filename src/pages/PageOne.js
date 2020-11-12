@@ -6,7 +6,7 @@ const PageOne = () => {
 
     const next = () => {
         //con push podras cambiar de pagina
-        history.push('/page_two')
+        history.push('/page_two/tadeo')
     }
 
     return (

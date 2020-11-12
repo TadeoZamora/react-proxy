@@ -15,7 +15,7 @@ ReactDOM.render(
       <Route path="/" exact component={ App } />
       <Route path="/counter" component={Counter} />
       <Route path="/create" component={CreateProduct} />
-      <Route path="/page_two" component={PageTwo} />
+      <Route path="/page_two/:name" component={PageTwo} />
       {/* es otra manera de usar el Route */}
       <Route path="/page_one">
         <PageOne />
