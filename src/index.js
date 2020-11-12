@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import CreateProduct from './pages/CreateProduct'
 import Counter from './pages/Counter';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import PageOne from './pages/PageOne';
+import PageTwo from './pages/PageTwo';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -13,6 +15,11 @@ ReactDOM.render(
       <Route path="/" exact component={ App } />
       <Route path="/counter" component={Counter} />
       <Route path="/create" component={CreateProduct} />
+      <Route path="/page_two" component={PageTwo} />
+      {/* es otra manera de usar el Route */}
+      <Route path="/page_one">
+        <PageOne />
+      </Route>
     </Switch>
   </BrowserRouter>,
   document.getElementById('root')
