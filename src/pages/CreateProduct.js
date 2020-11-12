@@ -19,8 +19,20 @@ const CreateProduct = () =>{
     }
 
     const addProduct = () => {
-        let backUp = products.concat(product)
-        setProducts( backUp )
+        if(product.name !== "" && product.price > 0){
+            let backUp = products.concat(product)
+            setProducts( backUp )
+        }
+    }
+
+    const deleteProduct = (index) =>{
+        console.log(index)
+        let backup = products.filter( (item,position) =>{
+            if(position !== index){
+                return item
+            }
+        })
+        setProducts(backup)
     }
 
     return(
@@ -61,7 +73,9 @@ const CreateProduct = () =>{
                     <>
                         List
                         {
-                            products.map((item,index) => (<Product key={ index.toString()} name={item.name}/>))
+                            products.map((item,index) => (
+                                <Product deleteProduct={ () => deleteProduct(index) } key={ index.toString()} name={item.name}/>
+                            ))
                         }
                     </>
                 }
