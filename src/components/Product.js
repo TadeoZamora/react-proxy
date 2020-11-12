@@ -3,7 +3,7 @@ import React from 'react'
 const Product = ({ ...props }) =>{
 
     return(
-        <p>{ props.name }</p>
+        <li className="list-group-item">{ props.name }</li>
     )
 
 }

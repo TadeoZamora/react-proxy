@@ -4,7 +4,7 @@ import { products } from './constants/Products'
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       {
         products.map(item => (
           <Product key={ item.id.toString() } name={ item.name } />

@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CreateProduct from './pages/CreateProduct'
+import Counter from './pages/Counter';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <CreateProduct /> 
+    {/* <Counter /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
