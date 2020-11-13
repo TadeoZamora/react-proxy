@@ -1,14 +1,15 @@
-import React,{ useState } from 'react'
-import List from '../components/List'
-import Product from '../components/Product'
+import React,{ useContext, useState } from 'react'
+import { Store } from '../context/Process'
 
 const CreateProduct = () =>{
+    const { addToCart, updateCart, cart } = useContext( Store )
+
     //variable, function
     const [ product, setProduct ] = useState({
         name : "",
         price : 0
     })
-    const [ products, setProducts ] = useState([])
+
 
     const getProductValue = (event) =>{
         // let value = event.target.value
@@ -20,19 +21,8 @@ const CreateProduct = () =>{
 
     const addProduct = () => {
         if(product.name !== "" && product.price > 0){
-            let backUp = products.concat(product)
-            setProducts( backUp )
+            addToCart(product)
         }
-    }
-
-    const deleteProduct = (index) =>{
-        console.log(index)
-        let backup = products.filter( (item,position) =>{
-            if(position !== index){
-                return item
-            }
-        })
-        setProducts(backup)
     }
 
     return(
@@ -67,19 +57,7 @@ const CreateProduct = () =>{
                 </div>
             </div>
             <hr/>
-            <List>
-                {
-                    products.length > 0 && 
-                    <>
-                        List
-                        {
-                            products.map((item,index) => (
-                                <Product deleteProduct={ () => deleteProduct(index) } key={ index.toString()} name={item.name}/>
-                            ))
-                        }
-                    </>
-                }
-            </List>
+            
         </div>
     )
 }
