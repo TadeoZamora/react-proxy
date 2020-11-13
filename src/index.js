@@ -8,20 +8,27 @@ import Counter from './pages/Counter';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import PageOne from './pages/PageOne';
 import PageTwo from './pages/PageTwo';
+import Process from './context/Process';
+import NagivationBar from './components/NavigationBar';
+import Cart from './pages/Cart';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" exact component={ App } />
-      <Route path="/counter" component={Counter} />
-      <Route path="/create" component={CreateProduct} />
-      <Route path="/page_two/:name" component={PageTwo} />
-      {/* es otra manera de usar el Route */}
-      <Route path="/page_one">
-        <PageOne />
-      </Route>
-    </Switch>
-  </BrowserRouter>,
+  <Process>
+    <BrowserRouter>
+      <NagivationBar />
+      <Switch>
+        <Route path="/" exact component={ App } />
+        <Route path="/counter" component={Counter} />
+        <Route path="/create" component={CreateProduct} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/page_two/:name" component={PageTwo} />
+        {/* es otra manera de usar el Route */}
+        <Route path="/page_one">
+          <PageOne />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </Process>,
   document.getElementById('root')
 );
 
